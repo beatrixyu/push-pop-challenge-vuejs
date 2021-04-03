@@ -1,10 +1,10 @@
 <template>
   <div>
-    <button @click="select='all'">all</button>
-    <button @click="select='resolved'">resolved</button>
-    <button @click="select='unresolved'">unresolved</button>
-    <button @click="select='backlog'">backlog</button>
-    <button @click="undoAction">undo</button>
+    <button @click="select='all'" class="allBtn">all</button>
+    <button @click="select='resolved'" class="resolvedBtn">resolved</button>
+    <button @click="select='unresolved'" class="unresolvedBtn">unresolved</button>
+    <button @click="select='backlog'" class="backlogBtn">backlog</button>
+    <button @click="undoAction" class="undoBtn">undo</button>
     <!--input v-model="search" @input="filterIssues"/-->
     <Resolved   v-if="select === 'all' || select === 'resolved'"   v-for="error in resolved"   :key="error.index" :error="error" :changeState="changeState"/>
     <Unresolved v-if="select === 'all' || select === 'unresolved'" v-for="error in unresolved" :key="error.index" :error="error" :changeState="changeState"/>
@@ -115,3 +115,58 @@ export default {
   },
 };
 </script>
+<style scoped>
+.allBtn {
+    color: white;
+    background: blue;
+    width: 18%;
+}
+
+.allBtn:hover {
+    color: blue;
+    background: white;
+}
+.resolvedBtn {
+    color: white;
+    background: green;
+    width: 18%;
+}
+
+.resolvedBtn:hover {
+    color: green;
+    background: white;
+}
+
+.unresolvedBtn {
+    color: white;
+    background: red;
+    width: 18%;
+}
+
+.unresolvedBtn:hover {
+    color: red;
+    background: white;
+}
+
+.backlogBtn {
+    color: white;
+    background: orange;
+    width: 18%;
+}
+
+.backlogBtn:hover {
+    color: orange;
+    background: white;
+}
+
+.undoBtn {
+    color: white;
+    background: purple;
+    width: 18%;
+}
+
+.undoBtn:hover {
+    color: purple;
+    background: white;
+}
+</style>
