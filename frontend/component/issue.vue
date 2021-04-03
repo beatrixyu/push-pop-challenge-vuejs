@@ -30,7 +30,7 @@ div {
 .errorBtn{
     background: purple;
     padding: 0 1%;
-    box-shadow: 1px 1px white;
+    box-shadow: 2px 2px white;
     border-radius: 4px;
 }
 </style>
